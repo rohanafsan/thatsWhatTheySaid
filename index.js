@@ -1,6 +1,6 @@
 const express = require("express");
-const characterRoutes = require('./routes/routes')
-const quoteRoutes = require('./routes/quoteRoutes')
+const characterRoutes = require('./src/routes/routes')
+const quoteRoutes = require('./src/routes/quoteRoutes')
 var path = require('path');
 
 const app = express();
@@ -10,7 +10,7 @@ const port = 3000;
 
 app.use(express.json())
 
-app.use(express.static('resources'));
+app.use(express.static('src/resources'));
 
 app.get('/', (req, res ) => {
   res.sendFile(__dirname + "/index.html");
