@@ -1,6 +1,7 @@
 const express = require("express");
 const characterRoutes = require('./src/routes/routes')
 const quoteRoutes = require('./src/routes/quoteRoutes')
+const triviaRoutes = require('./src/routes/triviaRoutes')
 var path = require('path');
 
 const app = express();
@@ -18,6 +19,7 @@ app.get('/', (req, res ) => {
 
 app.use('/characters', characterRoutes);
 app.use('/theOfficequotes', quoteRoutes);
+app.use('/trivia', triviaRoutes);
 
 
 app.listen(port, () => console.log(`listening on port ${port}`));

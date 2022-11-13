@@ -58,6 +58,14 @@ const deleteCharacterQuotesByID = (req, res) => {
 };
 
 
+const getTrivia = (req, res) => {
+  pool.query(queries.getTrivia, (error, results) => {
+        if (error) throw (error);
+        res.status(200).json(results.rows);
+    });
+};
+
+
 module.exports = {
   getCharacters,
   postCharacters,
@@ -65,4 +73,5 @@ module.exports = {
   getCharacterQuotesByID,
   postQuote,
   deleteCharacterQuotesByID,
+  getTrivia,
 };
